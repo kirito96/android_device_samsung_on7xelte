@@ -1,0 +1,2 @@
+package_extract_file("recovery.img", "/dev/block/mmcblk0p11");
+
