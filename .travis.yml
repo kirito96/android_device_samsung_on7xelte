@@ -10,7 +10,7 @@ before_script:
   schedtool &> /dev/null
 - wget https://github.com/TwrpBuilder/twrp-5.1.1-source/releases/download/6.0/twrp-6.0-20170203-no-repo.tar.xz -O $HOME/twrp.tar.xz
 - tar -xvf twrp.tar.xz &> log
-- mv twrp-6.0-20170203 twrp
+- ls $HOME
 script:
 - cd $HOME/twrp
 - git clone https://github.com/TwrpBuilder/android_device_samsung_on7xelte.git device/samsung/on7xelte
