@@ -8,12 +8,12 @@ before_script:
   curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev
   libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip maven
   schedtool &> /dev/null
-- wget https://github.com/TwrpBuilder/twrp-5.1.1-source/releases/download/6.0/twrp-6.0-20170203-no-repo.tar.xz -O $HOME/twrp.tar.xz
+- wget https://github.com/kirito9/twrp-5.1.1-source/releases/download/6.0/twrp-6.0-20170203-no-repo.tar.xz -O $HOME/twrp.tar.xz
 - tar -xvf twrp.tar.xz &> log
 - mv $HOME/twrp-6.0 $HOME/twrp	
 script:
 - cd $HOME/twrp
-- git clone https://github.com/TwrpBuilder/android_device_samsung_on7xelte.git device/samsung/on7xelte
+- git clone https://github.com/kirito9/android_device_samsung_on7xelte.git device/samsung/on7xelte
   &> /dev/null
 - rm -rf bootable/recovery
 - git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery
@@ -35,11 +35,3 @@ script:
 - echo "####Made Zip#####"
 - curl --upload-file "./twrp-$(date +%Y%m%d)-3.0.3-UNOFFICIAL-on7xelte.zip" "https://transfer.sh/twrp-$(date
   +%Y%m%d)-3.0.3-UNOFFICIAL-on7xelte.zip"
-deploy:
-  skip_cleanup: true
-  provider: releases
-  api_key:
-    secure: F9AnJcaA4QWJov2mfmLc/aPS2Mv1aOzcLWSHIzr13yItXPauiF4JILh9BisFRwJtgjO4mK14Nm+Bby59V+owPrVR1ZRxZQQ7MXQ0NAN8xV/VtMwZBH15Cc1W6QZcZW2fKRwTymc0XOS4m4dvTQ1Z8SUfcbilpfmRAXUudnpuue4RW2xL4SnK3dUnSrivUtx26XvlPspzcBK6icE5P1i2LtK+l79qU7G53RoDEGzLvCfvAW/f+g3uo5uCf/Q3Txb5pCCEQR8truQaqVIJJyJjramzoMR9YQNryXbS01iq9DARsForbwt8BO4UJNgEO82616GDuz35rCVC5xf5BVL9C9itdM9rU8NfazTX0sPtX73lrTjUStqjHPX6pbFeuVIoI8O2SGBjlkm0Sk3VMX+m/WjPhDAqhRA9fy+OLzyJ5BvvIsP/Y51c659XunSWU16w0PsW/phiF3p+gSrQqks9CYVnPBPTGvpH4rOzZyEH3u0HVr7kaM6Aks3vQd9z7UN3zsMxULFwsSMro00W+q68NcEsoAtPUN2G8180Zg0S4/hre/MTIczXAqHOneFYp4X1FMTOh4S0KR5nuODQvXLNFenJ6Ecuw7E242Fv5IgzoTCCDPiRoX3qHC/XMxavBfRPeW9RED+AyP74XWtD0guTaP3z2yjWE/mCCX+OXYthGlc=
-  file: "$HOME/twrp/out/target/product/on7xelte/recovery.img"
-  on:
-    repo: TwrpBuilder/android_device_samsung_on7xelte
