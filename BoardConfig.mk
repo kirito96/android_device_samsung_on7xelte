@@ -68,7 +68,7 @@ TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_EXCLUDE_SUPERSU := true
 
 # Color fix
-TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
