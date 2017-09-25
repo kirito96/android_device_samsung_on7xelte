@@ -8,12 +8,12 @@ before_script:
   curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev
   libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip maven
   schedtool &> /dev/null
-- wget https://github.com/TwrpBuilder/twrp-5.1.1-source/releases/download/6.0/twrp-6.0-20170203-no-repo.tar.xz -O $HOME/twrp.tar.xz
+- wget https://github.com/kirito96/twrp-5.1.1-source/releases/download/6.0/twrp-6.0-20170203-no-repo.tar.xz -O $HOME/twrp.tar.xz
 - tar -xvf twrp.tar.xz &> log
 - mv $HOME/twrp-6.0 $HOME/twrp	
 script:
 - cd $HOME/twrp
-- git clone https://github.com/kirito9/android_device_samsung_on7xelte.git device/samsung/on7xelte
+- git clone https://github.com/kirito96/android_device_samsung_on7xelte.git device/samsung/on7xelte
   &> /dev/null
 - rm -rf bootable/recovery
 - git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery
@@ -33,5 +33,5 @@ script:
 - curl --upload-file "./$(date +%Y%m%d)-$(cat md5).tar" "https://transfer.sh/$(date
   +%Y%m%d)-$(cat md5).tar"
 - echo "####Made Zip#####"
-- curl --upload-file "./twrp-$(date +%Y%m%d)-3.0.3-UNOFFICIAL-on7xelte.zip" "https://transfer.sh/twrp-$(date
+- curl --upload-file "./twrp-$(date +%Y%m%d)-3.1.1-UNOFFICIAL-on7xelte.zip" "https://transfer.sh/twrp-$(date
   +%Y%m%d)-3.0.3-UNOFFICIAL-on7xelte.zip"
