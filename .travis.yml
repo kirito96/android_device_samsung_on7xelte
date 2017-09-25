@@ -33,5 +33,5 @@ script:
 - curl --upload-file "./$(date +%Y%m%d)-$(cat md5).tar" "https://transfer.sh/$(date
   +%Y%m%d)-$(cat md5).tar"
 - echo "####Made Zip#####"
-- curl --upload-file "./twrp-$(date +%Y%m%d)-3.1.1-UNOFFICIAL-on7xelte.zip" "https://transfer.sh/twrp-$(date
+- curl --upload-file "./twrp-$(date +%Y%m%d)-3.0.3-UNOFFICIAL-on7xelte.zip" "https://transfer.sh/twrp-$(date
   +%Y%m%d)-3.0.3-UNOFFICIAL-on7xelte.zip"
